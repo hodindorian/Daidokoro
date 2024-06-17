@@ -1,0 +1,31 @@
+kind: pipeline
+type: docker
+name: Daidokoro
+
+trigger:
+  event:
+    - push
+
+steps:
+
+  - name: build-daidokoro
+    image: plugins/docker
+    settings:
+      dockerfile: ./daidokoro/Dockerfile
+      context: ./daidokoro
+      registry: hub.codefirst.iut.uca.fr
+      repo: hub.codefirst.iut.uca.fr/dorian.hodin/daidokoro
+      username:
+        from_secret: SECRET_USERNAME
+      password:
+        from_secret: SECRET_PASSWD
+
+  - name: deploy-daidokoro
+    image: hub.codefirst.iut.uca.fr/thomas.bellembois/codefirst-dockerproxy-clientdrone:latest
+    environment:
+      IMAGENAME: hub.codefirst.iut.uca.fr/dorian.hodin/daidokoro:latest
+      CONTAINERNAME: daidokoro
+      COMMAND: create
+      OVERWRITE: true
+      ADMINS: dorianhodin,corentinrichard
+    depends_on: [ build-daidokoro ]
