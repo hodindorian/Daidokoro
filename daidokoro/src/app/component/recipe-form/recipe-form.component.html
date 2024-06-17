@@ -1,0 +1,14 @@
+<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+  <label for="id">ID: </label>
+  <input id="id" type="number" formControlName="id">
+
+  <label for="name">name: </label>
+  <input id="name" type="text" formControlName="name">
+
+  <label for="description">description: </label>
+  <input id="description" type="text" formControlName="description">
+
+
+  <p>Complete the form to enable the button.</p>
+  <button type="submit" [disabled]="!recipeForm.valid">Submit</button>
+</form>
