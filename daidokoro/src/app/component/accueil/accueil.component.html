@@ -31,20 +31,36 @@
       display: flex;
       gap: 20px;
     }
-    .recipe-container {
+    .recipe-container, .form-container {
       background-color: #bab6b6;
       color: black;
       padding: 20px;
-      margin-top: 0;
+      flex: 1;
+    }
+    .recipe-container {
+      display: flex;
+      flex-direction: column;
     }
     .recipe-container h2 {
       font-size: 3em;
       margin-bottom: 10px;
     }
+    .form-container {
+      display: none;
+      flex-direction: column;
+    }
+    .show-form .form-container {
+      display: flex;
+    }
+    .show-form .recipe-container, .show-form .form-container {
+      flex: 1;
+    }
+    .button-container {
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
-
 <div class="navbar">
   <a href="#home">Accueil</a>
   <a href="#recipes">Recettes</a>
@@ -52,12 +68,15 @@
   <a href="#contact">Contact</a>
 </div>
 
-<div class="content">
+<div class="content" [class.show-form]="isFormVisible">
   <div class="recipe-container">
     <h2>Liste Recettes</h2>
-    <app-recipe-list></app-recipe-list>
+    <div class="button-container">
+      <button (click)="toggleForm()">Ajouter une recette</button>
+    </div>
+    <app-recipe-list [isFormVisible]="isFormVisible"></app-recipe-list>
   </div>
-  <div>
+  <div class="form-container" *ngIf="isFormVisible">
     <app-recipe-form (formSubmitted)="onRecipeSubmitted($event)"></app-recipe-form>
   </div>
 </div>
