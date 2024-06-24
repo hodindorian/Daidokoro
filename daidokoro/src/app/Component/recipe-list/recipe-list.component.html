@@ -1,0 +1,123 @@
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #bab6b6;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .recipe-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 10px;
+      overflow: hidden;
+      width: calc(33.33% - 20px);
+      transition: transform 0.2s;
+    }
+    .recipe-card:hover {
+      transform: scale(1.05);
+    }
+    .recipe-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .recipe-content {
+      padding: 15px;
+    }
+    .recipe-title {
+      font-size: 1.5em;
+      margin: 0 0 10px;
+    }
+    .recipe-description {
+      font-size: 1em;
+      color: #666;
+    }
+    .details-button {
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .details-button:hover {
+      background-color: #525259;
+    }
+    @media (max-width: 768px) {
+      .recipe-card {
+        width: calc(50% - 20px);
+      }
+    }
+    @media (max-width: 480px) {
+      .recipe-card {
+        width: calc(100% - 20px);
+        margin: 10px 0;
+      }
+    }
+
+  </style>
+<body>
+
+<div class="recipe-card">
+  <img src="image1.jpg" alt="Recette 1" class="recipe-image" onerror="this.onerror=null;this.src='https://placehold.co/100x100/black/white?text=Not+Found';">
+  <div class="recipe-content">
+    <h2 class="recipe-title">Recette 1</h2>
+    <p class="recipe-description">Description courte de la recette 1.</p>
+    <button class="details-button" onclick="toggleDetails(this)">Détails</button>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <img src="image2.jpg" alt="Recette 2" class="recipe-image" onerror="this.onerror=null;this.src='https://placehold.co/100x100/black/white?text=Not+Found';">
+  <div class="recipe-content">
+    <h2 class="recipe-title">Recette 2</h2>
+    <p class="recipe-description">Description courte de la recette 2.</p>
+    <button class="details-button" onclick="toggleDetails(this)">Détails</button>
+
+  </div>
+</div>
+
+<div class="recipe-card">
+  <img src="image3.jpg" alt="Recette 3" class="recipe-image" onerror="this.onerror=null;this.src='https://placehold.co/100x100/black/white?text=Not+Found';">
+  <div class="recipe-content">
+    <h2 class="recipe-title">Recette 3</h2>
+    <p class="recipe-description">Description courte de la recette 3.</p>
+    <button class="details-button" onclick="toggleDetails(this)">Détails</button>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <img src="image4.jpg" alt="Recette 4" class="recipe-image" onerror="this.onerror=null;this.src='https://placehold.co/100x100/black/white?text=Not+Found';">
+  <div class="recipe-content">
+    <h2 class="recipe-title">Recette 4</h2>
+    <p class="recipe-description">Description courte de la recette 4.</p>
+    <button class="details-button" onclick="toggleDetails(this)">Détails</button>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <img src="image5.jpg" alt="Recette 5" class="recipe-image" onerror="this.onerror=null;this.src='https://placehold.co/100x100/black/white?text=Not+Found';">
+  <div class="recipe-content">
+    <h2 class="recipe-title">Recette 5</h2>
+    <p class="recipe-description">Description courte de la recette 5.</p>
+    <button class="details-button" onclick="toggleDetails(this)">Détails</button>
+  </div>
+</div>
+
+<div class="recipe-card">
+  <img src="image6.jpg" alt="Recette 6" class="recipe-image" onerror="this.onerror=null;this.src='https://placehold.co/100x100/black/white?text=Not+Found';">
+  <div class="recipe-content">
+    <h2 class="recipe-title">Recette 6</h2>
+    <p class="recipe-description">Description courte de la recette 6.</p>
+    <button class="details-button" onclick="toggleDetails(this)">Détails</button>
+  </div>
+</div>
+
+</body>
