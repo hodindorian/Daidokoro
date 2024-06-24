@@ -28,13 +28,14 @@
     }
     .content {
       padding: 20px;
+      display: flex;
+      gap: 20px;
     }
     .recipe-container {
       background-color: #bab6b6;
       color: black;
       padding: 20px;
       margin-top: 0;
-      margin-right: 50%;
     }
     .recipe-container h2 {
       font-size: 3em;
@@ -55,6 +56,9 @@
   <div class="recipe-container">
     <h2>Liste Recettes</h2>
     <app-recipe-list></app-recipe-list>
+  </div>
+  <div>
+    <app-recipe-form (formSubmitted)="onRecipeSubmitted($event)"></app-recipe-form>
   </div>
 </div>
 

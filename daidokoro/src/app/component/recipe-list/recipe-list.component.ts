@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { RecipeService } from '../../Service/recipe.service';
-import { Recipe } from '../../Model/recipe.model';
+import { RecipeService } from '../../service/recipe.service';
+import { Recipe } from '../../model/recipe.model';
 import {NgOptimizedImage} from "@angular/common";
+import {NgFor} from "@angular/common";
 
 @Component({
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    NgFor
   ],
   standalone: true
 })
