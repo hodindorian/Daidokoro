@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Ingredient} from "../model/ingredient.model";
 import {$INGREDIENTS} from "../data/ingredient.stub";
+import {Observable, of} from "rxjs";
 
 
 @Injectable({
@@ -8,9 +9,7 @@ import {$INGREDIENTS} from "../data/ingredient.stub";
 })
 export class IngredientService {
 
-  constructor() { }
-
-  getAll() : Ingredient[] {
-    return $INGREDIENTS;
+  getAll() : Observable<Ingredient[]> {
+    return of($INGREDIENTS);
   }
 }
