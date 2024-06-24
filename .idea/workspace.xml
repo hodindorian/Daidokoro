@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5a06892-a370-4c6a-a9cf-5d61f93a285b" name="Changes" comment="Adding Front" />
+    <list default="true" id="c5a06892-a370-4c6a-a9cf-5d61f93a285b" name="Changes" comment="Adding Front">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daidokoro/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daidokoro/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daidokoro/.vscode/tasks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daidokoro/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/daidokoro/public/favicon.ico" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +58,12 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/daidokoro/public" />
+      <recent name="$PROJECT_DIR$/daidokoro/src/app" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
