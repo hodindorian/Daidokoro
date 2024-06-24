@@ -1,6 +1,6 @@
 <div align = center>
 
-<img src="https://i.pinimg.com/736x/17/79/83/177983f3e806df254b8099b1d191f848.jpg" width="550" height="">
+<img src="https://i.pinimg.com/736x/17/79/83/177983f3e806df254b8099b1d191f848.jpg" width="100%" height="">
 
 </div>
 
