@@ -2,12 +2,32 @@
   <label for="id">ID: </label>
   <input id="id" type="number" formControlName="id">
 
-  <label for="name">name: </label>
+  <label for="name">Name: </label>
   <input id="name" type="text" formControlName="name">
 
-  <label for="description">description: </label>
+  <label for="description">Description: </label>
   <input id="description" type="text" formControlName="description">
 
+  <div formArrayName="ingredients">
+    <div *ngFor="let ingredient of ingredients.controls; let i=index" [formGroupName]="i">
+      <label for="ingredient-quantity">Quantity:</label>
+      <input id="ingredient-quantity" type="number" formControlName="quantity">
+
+      <label for="ingredient-unit">Unit:</label>
+      <select id="ingredient-unit" formControlName="unit">
+        <option *ngFor="let unit of unity" [value]="unit">{{ unit }}</option>
+      </select>
+
+      <label for="ingredient-name">Ingredient:</label>
+      <select id="ingredient-name" formControlName="ingredient">
+        <option *ngFor="let ingredient of ingredientsList" [value]="ingredient.$name">{{ ingredient.$name }}</option>
+      </select>
+
+      <button type="button" (click)="removeIngredient(i)">Remove</button>
+    </div>
+  </div>
+
+  <button type="button" (click)="addIngredient()">Add Ingredient</button>
 
   <p>Complete the form to enable the button.</p>
   <button type="submit" [disabled]="!recipeForm.valid">Submit</button>

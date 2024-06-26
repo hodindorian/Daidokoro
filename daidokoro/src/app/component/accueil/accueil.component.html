@@ -62,10 +62,20 @@
 </head>
 <body>
 <div class="navbar">
-  <a href="#home">Accueil</a>
-  <a href="#recipes">Recettes</a>
-  <a href="#about">À Propos</a>
-  <a href="#contact">Contact</a>
+  <div *ngIf="isLogged()">
+    <a href="" (click)="onClickLogout($event)">Logout</a>
+  </div>
+  <div *ngIf="!isLogged()">
+    <a href="" (click)="onClickLogin($event)">Login</a>
+  </div>
+
+  <div *ngFor="let link of links">
+    <a routerLink="/{{link.$link}}" routerLinkActive="active" ariaCurrentWhenActive="page">{{link.$name}}</a>
+  </div>
+<!--  <a href="#home">Accueil</a>-->
+<!--  <a href="#recipes">Recettes</a>-->
+<!--  <a href="#about">À Propos</a>-->
+<!--  <a href="#contact">Contact</a>-->
 </div>
 
 <div class="content" [class.show-form]="isFormVisible">
