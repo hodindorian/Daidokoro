@@ -1,0 +1,50 @@
+<style>
+  .ingredients {
+    font-family: Arial, sans-serif;
+    background-color: #bab6b6;
+    margin: 0px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .ingredient-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+    width: 200px;
+    margin: 20px;
+  }
+  .ingredient-card:hover {
+    transform: scale(1.05);
+  }
+  .ingredient-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .ingredient-content {
+    padding: 15px;
+  }
+  .ingredient-title {
+    font-size: 1em;
+    margin: 0 0 10px;
+  }
+</style>
+<body>
+  <div class="ingredients">
+
+    <div class="ingredient-card" *ngFor="let ingredient of ingredients ">
+      <img src="image1.jpg" alt="Recette 1" class="ingredient-image"
+           onerror="this.onerror=null;this.src='https://placehold.co/100x100/black/white?text=Not+Found';">
+      <div class="ingredient-content">
+        <h2 class="ingredient-title">{{ ingredient.$name }}</h2>
+      </div>
+    </div>
+
+  </div>
+</body>

@@ -3,6 +3,7 @@ import { RecipeService } from '../../service/recipe.service';
 import { Recipe } from '../../model/recipe.model';
 import {NgClass, NgOptimizedImage} from "@angular/common";
 import {NgFor} from "@angular/common";
+import {Router, RouterLinkActive} from "@angular/router";
 
 @Component({
   selector: 'app-recipe-list',
@@ -10,7 +11,8 @@ import {NgFor} from "@angular/common";
   imports: [
     NgOptimizedImage,
     NgFor,
-    NgClass
+    NgClass,
+    RouterLinkActive
   ],
   standalone: true
 })
@@ -22,7 +24,7 @@ export class RecipeListComponent implements OnInit {
   pageSize: number = 4;
   totalPages: any = 0;
 
-  constructor(private recipeService: RecipeService) {}
+  constructor(private recipeService: RecipeService,private router : Router) {}
 
   ngOnInit(): void {
     this.recipes = this.recipeService.getRecipes();
@@ -48,5 +50,9 @@ export class RecipeListComponent implements OnInit {
     if (this.currentPage < this.totalPages - 1) {
       this.currentPage++;
     }
+  }
+
+  detailsRecipe(id : number){
+    this.router.navigateByUrl('/recipe/'+id);
   }
 }
