@@ -83,13 +83,13 @@
     <div class="recipe-content">
       <h2 class="recipe-title">{{recipe.$name}}</h2>
       <p class="recipe-description">{{recipe.$description}}</p>
-      <button class="details-button">Détails</button>
+      <button (click)="detailsRecipe(recipe.$id)" class="details-button">Détails</button>
     </div>
   </div>
 </div>
 <div class="pagination">
   <button class="page-link" (click)="previousPage()" [disabled]="currentPage === 0">Précédent</button>
-  <span class="page-link" *ngFor="let page of totalPages; let i = index" [class.active]="currentPage === i" (click)="changePage(i)">{{ i + 1 }}</span>
+<!--  <span class="page-link" *ngFor="let page of totalPages; let i = index" [class.active]="currentPage === i" (click)="changePage(i)">{{ i + 1 }}</span>-->
   <button class="page-link" (click)="nextPage()" [disabled]="currentPage === totalPages - 1">Suivant</button>
 </div>
 </body>

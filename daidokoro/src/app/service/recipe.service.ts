@@ -15,4 +15,7 @@ export class RecipeService {
     this.recipes.push(recipe);
     localStorage.setItem('recipes', JSON.stringify(this.recipes));
   }
+  getRecipe($id:number):Recipe{
+    return this.recipes.find(x => x.$id == $id)!
+  }
 }

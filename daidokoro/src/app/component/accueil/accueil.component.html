@@ -10,22 +10,6 @@
       margin: 0;
       padding: 0;
     }
-    .navbar {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      background-color: #333;
-      padding: 1em;
-    }
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      padding: 0.5em 1em;
-    }
-    .navbar a:hover {
-      background-color: #ddd;
-      color: black;
-    }
     .content {
       padding: 20px;
       display: flex;
@@ -61,23 +45,6 @@
   </style>
 </head>
 <body>
-<div class="navbar">
-  <div *ngIf="isLogged()">
-    <a href="" (click)="onClickLogout($event)">Logout</a>
-  </div>
-  <div *ngIf="!isLogged()">
-    <a href="" (click)="onClickLogin($event)">Login</a>
-  </div>
-
-  <div *ngFor="let link of links">
-    <a routerLink="/{{link.$link}}" routerLinkActive="active" ariaCurrentWhenActive="page">{{link.$name}}</a>
-  </div>
-<!--  <a href="#home">Accueil</a>-->
-<!--  <a href="#recipes">Recettes</a>-->
-<!--  <a href="#about">À Propos</a>-->
-<!--  <a href="#contact">Contact</a>-->
-</div>
-
 <div class="content" [class.show-form]="isFormVisible">
   <div class="recipe-container">
     <h2>Liste Recettes</h2>
