@@ -3,3 +3,5 @@
 
 <h3>{{recipe?.$description}}</h3>
 
+<img [src]="recipe?.$image" alt="Recette 1" class="recipe-image"
+     onerror="this.onerror=null;this.src='https://placehold.co/100x100/black/white?text=Not+Found';">

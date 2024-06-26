@@ -79,7 +79,8 @@
 <body>
 <div [ngClass]="{'four-column': !isFormVisible, 'two-column': isFormVisible}" class="recipe-container">
   <div class="recipe-card" *ngFor="let recipe of paginatedRecipes">
-    <img src="image1.jpg" alt="Recette 1" class="recipe-image" onerror="this.onerror=null;this.src='https://placehold.co/100x100/black/white?text=Not+Found';">
+    <img [src]="recipe.$image" alt="Recette 1" class="recipe-image"
+         onerror="this.onerror=null;this.src='https://placehold.co/100x100/black/white?text=Not+Found';">
     <div class="recipe-content">
       <h2 class="recipe-title">{{recipe.$name}}</h2>
       <p class="recipe-description">{{recipe.$description}}</p>

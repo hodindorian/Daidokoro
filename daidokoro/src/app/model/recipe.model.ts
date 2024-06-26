@@ -5,5 +5,6 @@ export interface Recipe {
   $name : string,
   $description: string,
   $createdAt : Date,
-  $ingredients: QuantifiedIngredient[]
+  $ingredients: QuantifiedIngredient[],
+  $image?: string
 }
