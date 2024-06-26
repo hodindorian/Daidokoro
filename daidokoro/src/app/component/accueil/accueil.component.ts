@@ -8,6 +8,7 @@ import {LinkService} from "../../service/link.service";
 import {Link} from "../../model/link.model";
 import {LoginService} from "../../service/login.service";
 import {RouterLink, RouterLinkActive,RouterOutlet} from "@angular/router";
+import {CommonModule} from "@angular/common";
 
 @Component({
   selector: 'app-accueil',
@@ -15,7 +16,7 @@ import {RouterLink, RouterLinkActive,RouterOutlet} from "@angular/router";
   imports: [
     RecipeListComponent,
     RecipeFormComponent,
-    NgIf,
+    CommonModule,
     NgForOf,
     RouterLink,
     RouterOutlet,
@@ -29,11 +30,6 @@ export class AccueilComponent {
 
 
   constructor(private recipeService: RecipeService,private linkService: LinkService,private loginService: LoginService) {
-    if(this.loginService.isLogged()){
-      this.links.push({$name: '/logout',$link: '/logout'});
-    }else{
-      this.links.push({$name: '/login',$link: '/login'});
-    }
   }
 
 
@@ -44,4 +40,19 @@ export class AccueilComponent {
   toggleForm() {
     this.isFormVisible = !this.isFormVisible;
   }
+
+  onClickLogin(event: Event): void {
+    event.preventDefault(); // Prevent the default anchor behavior
+    this.loginService.login();
+  }
+
+  onClickLogout(event: Event): void {
+    event.preventDefault(); // Prevent the default anchor behavior
+    this.loginService.logout();
+  }
+
+  isLogged(): boolean {
+    return this.loginService.isLogged();
+  }
+
 }

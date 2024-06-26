@@ -5,17 +5,16 @@ import { Injectable } from '@angular/core';
 })
 export class LoginService {
 
-  constructor() { }
-
-  login() {
-    localStorage.setItem('login', String(true));
+  login(): void {
+    localStorage.setItem('login', 'true');
   }
 
-  logout() : void {
-    localStorage.setItem('login',String(false));
+  logout(): void {
+    localStorage.setItem('login', 'false');
   }
 
-  isLogged() : boolean {
-    return JSON.parse(localStorage.getItem('login')!);
+  isLogged(): boolean {
+    const login = localStorage.getItem('login');
+    return login === 'true';
   }
 }
