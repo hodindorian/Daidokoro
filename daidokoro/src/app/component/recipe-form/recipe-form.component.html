@@ -1,25 +1,32 @@
 <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
   <label for="id">ID: </label>
-  <input id="id" type="number" formControlName="id">
+  <input id="id" type="number" formControlName="id" required>
 
   <label for="name">Name: </label>
-  <input id="name" type="text" formControlName="name">
+  <input id="name" type="text" formControlName="name" required>
 
   <label for="description">Description: </label>
-  <input id="description" type="text" formControlName="description">
+  <input id="description" type="text" formControlName="description" required>
+
+  <label for="image">Image: </label>
+  <input id="image" type="file" (change)="onFileChange($event)">
+
+  <div *ngIf="imageBase64">
+    <img [src]="imageBase64" alt="Selected Image" style="max-width: 200px; max-height: 200px;">
+  </div>
 
   <div formArrayName="ingredients">
     <div *ngFor="let ingredient of ingredients.controls; let i=index" [formGroupName]="i">
       <label for="ingredient-quantity">Quantity:</label>
-      <input id="ingredient-quantity" type="number" formControlName="quantity">
+      <input id="ingredient-quantity" type="number" formControlName="quantity" required>
 
       <label for="ingredient-unit">Unit:</label>
-      <select id="ingredient-unit" formControlName="unit">
+      <select id="ingredient-unit" formControlName="unit" required>
         <option *ngFor="let unit of unity" [value]="unit">{{ unit }}</option>
       </select>
 
       <label for="ingredient-name">Ingredient:</label>
-      <select id="ingredient-name" formControlName="ingredient">
+      <select id="ingredient-name" formControlName="ingredient" required>
         <option *ngFor="let ingredient of ingredientsList" [value]="ingredient.$name">{{ ingredient.$name }}</option>
       </select>
 
