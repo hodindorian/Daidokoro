@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c5a06892-a370-4c6a-a9cf-5d61f93a285b" name="Changes" comment="Adding Front">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daidokoro/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/daidokoro/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daidokoro/src/app/component/accueil/accueil.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/daidokoro/src/app/component/accueil/accueil.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daidokoro/src/app/component/accueil/accueil.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/daidokoro/src/app/component/accueil/accueil.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daidokoro/src/app/component/recipe-list/recipe-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/daidokoro/src/app/component/recipe-list/recipe-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daidokoro/src/app/component/recipe-list/recipe-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/daidokoro/src/app/component/recipe-list/recipe-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daidokoro/src/app/component/recipe-form/recipe-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/daidokoro/src/app/component/recipe-form/recipe-form.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="front" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,7 +43,7 @@
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;formFront&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/dorian/Documents/but3/Angular/Daidokoro&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
