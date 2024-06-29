@@ -104,12 +104,14 @@
     <label for="image">Image: </label>
     <input id="image" type="file" (change)="onFileChange($event)">
 
+    <br>
     <div *ngIf="imageBase64">
       <img [src]="imageBase64" alt="Selected Image" style="max-width: 200px; max-height: 200px;">
     </div>
+    <br>
 
     <div formArrayName="ingredients">
-      <div *ngFor="let ingredient of ingredients.controls; let i=index" [formGroupName]="i">
+      <div *ngFor="let ingredient of ingredients.controls; let i=index" [formGroupName]="i" class="form-group">
         <label for="ingredient-quantity">Quantity:</label>
         <input id="ingredient-quantity" type="number" formControlName="quantity" required>
 
@@ -123,14 +125,14 @@
           <option *ngFor="let ingredient of ingredientsList" [value]="ingredient.$name">{{ ingredient.$name }}</option>
         </select>
 
-        <button type="button" (click)="removeIngredient(i)">Remove</button>
+        <button type="button" class="remove-button" (click)="removeIngredient(i)">Remove</button>
       </div>
     </div>
 
-    <button type="button" (click)="addIngredient()">Add Ingredient</button>
+    <button type="button" class="add-ingredient-button" (click)="addIngredient()">Add Ingredient</button>
 
     <p>Complete the form to enable the button.</p>
-    <button type="submit" [disabled]="!recipeForm.valid">Submit</button>
+    <button type="submit"  class="submit-button"  [disabled]="!recipeForm.valid">Submit</button>
   </form>
   </div>
 </body>
