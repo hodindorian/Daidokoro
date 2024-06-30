@@ -1,7 +1,85 @@
-<h1>{{recipe?.$name}}</h1>
-<p> {{recipe?.$createdAt}}</p>
+<style>
+  .recipe-details {
+    font-family: Arial, sans-serif;
+    background-color: #bab6b6;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-<h3>{{recipe?.$description}}</h3>
+  .recipe-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+    width: 80%;
+    margin: 20px;
+    padding: 20px;
+  }
 
-<img [src]="recipe?.$image" alt="Recette 1" class="recipe-image"
-     onerror="this.onerror=null;this.src='https://placehold.co/100x100/black/white?text=Not+Found';">
+  .recipe-card:hover {
+    transform: scale(1.05);
+  }
+
+  .recipe-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+  }
+
+  .recipe-content {
+    padding: 15px;
+    text-align: center;
+  }
+
+  .recipe-title {
+    font-size: 2em;
+    margin: 0 0 10px;
+  }
+
+  .recipe-date {
+    color: #777;
+    margin-bottom: 20px;
+  }
+
+  .recipe-description {
+    font-size: 1.2em;
+    margin: 20px 0;
+  }
+
+  .ingredient-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .ingredient-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+  }
+
+</style>
+
+
+<div class="recipe-details">
+  <div class="recipe-card">
+    <h1 class="recipe-title">{{ recipe?.$name }}</h1>
+    <p class="recipe-date">{{ recipe?.$createdAt }}</p>
+    <img [src]="recipe?.$image" alt="{{ recipe?.$name }}" class="recipe-image"
+         onerror="this.onerror=null;this.src='https://placehold.co/300x300/black/white?text=Not+Found';">
+    <div class="recipe-content">
+      <h3 class="recipe-description">{{ recipe?.$description }}</h3>
+      <h4>Ingrédients</h4>
+      <ul class="ingredient-list">
+        <li class="ingredient-item" *ngFor="let ingredient of ingredients">
+          {{ ingredient.ingredient.name }} : {{ ingredient.quantity }} {{ ingredient.unit }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
