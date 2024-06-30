@@ -9,7 +9,7 @@ trigger:
 steps:
 
   - name: build-daidokoro
-    image: hub.codefirst.iut.uca.fr/clement.freville2/plugins/kaniko:latest
+    image: plugins/docker
     settings:
       dockerfile: ./daidokoro/Dockerfile
       context: ./daidokoro
