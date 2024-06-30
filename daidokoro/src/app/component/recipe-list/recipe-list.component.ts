@@ -1,9 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { RecipeService } from '../../service/recipe.service';
 import { Recipe } from '../../model/recipe.model';
-import {NgClass, NgOptimizedImage} from "@angular/common";
+import {NgClass, NgIf, NgOptimizedImage} from "@angular/common";
 import {NgFor} from "@angular/common";
 import {Router, RouterLinkActive} from "@angular/router";
+import {CommandService} from "../../service/command.service";
 
 @Component({
   selector: 'app-recipe-list',
@@ -12,19 +13,23 @@ import {Router, RouterLinkActive} from "@angular/router";
     NgOptimizedImage,
     NgFor,
     NgClass,
-    RouterLinkActive
+    RouterLinkActive,
+    NgIf
   ],
   standalone: true
 })
 export class RecipeListComponent implements OnInit {
   recipes: Recipe[] = [];
+  errorMessageDisplay: boolean = false;
+  errorMessage: string | null = null;
+
   @Input() isFormVisible!: boolean;
 
   currentPage: number = 0;
   pageSize: number = 4;
   totalPages: any = 0;
 
-  constructor(private recipeService: RecipeService,private router : Router) {}
+  constructor(private recipeService: RecipeService,private router : Router, private commandService: CommandService) {}
 
   ngOnInit(): void {
     this.recipes = this.recipeService.getRecipes();
@@ -54,5 +59,20 @@ export class RecipeListComponent implements OnInit {
 
   detailsRecipe(id : number){
     this.router.navigateByUrl('/recipe/'+id);
+  }
+
+
+  addToCommand(recipe: Recipe) {
+    try {
+      this.commandService.addRecipe(recipe);
+      this.errorMessageDisplay = false;
+    } catch (e) {
+      if (e instanceof DOMException && e.name === 'QuotaExceededError') {
+        this.errorMessageDisplay = true;
+        this.errorMessage = 'Local Storage saturé, impossible d\'ajouter la recette dans le local storage des commandes.';
+      } else {
+        throw e;
+      }
+    }
   }
 }

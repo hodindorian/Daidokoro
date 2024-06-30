@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5a06892-a370-4c6a-a9cf-5d61f93a285b" name="Changes" comment="Adding recipe-details front">
-      <change afterPath="$PROJECT_DIR$/daidokoro/src/app/model/quantified-ingredient-getter.model.ts" afterDir="false" />
+    <list default="true" id="c5a06892-a370-4c6a-a9cf-5d61f93a285b" name="Changes" comment="Adding Command section, local storage exceed problem, adding error managing">
+      <change afterPath="$PROJECT_DIR$/daidokoro/src/app/service/command.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daidokoro/src/app/component/recipe-detail/recipe-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/daidokoro/src/app/component/recipe-detail/recipe-detail.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daidokoro/src/app/component/recipe-detail/recipe-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/daidokoro/src/app/component/recipe-detail/recipe-detail.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daidokoro/src/app/model/quantified-ingredient.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/daidokoro/src/app/model/quantified-ingredient.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daidokoro/src/app/model/recipe.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/daidokoro/src/app/model/recipe.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daidokoro/src/app/component/command/command.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/daidokoro/src/app/component/command/command.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daidokoro/src/app/component/command/command.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/daidokoro/src/app/component/command/command.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daidokoro/src/app/component/recipe-list/recipe-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/daidokoro/src/app/component/recipe-list/recipe-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daidokoro/src/app/component/recipe-list/recipe-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/daidokoro/src/app/component/recipe-list/recipe-list.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +87,7 @@
       <workItem from="1718625479373" duration="4985000" />
       <workItem from="1719217543390" duration="31000" />
       <workItem from="1719217580949" duration="135000" />
-      <workItem from="1719755658119" duration="5058000" />
+      <workItem from="1719755658119" duration="6807000" />
     </task>
     <task id="LOCAL-00001" summary="Adding Front">
       <option name="closed" value="true" />
@@ -113,7 +113,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719757925681</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Adding recipe-details front">
+      <option name="closed" value="true" />
+      <created>1719760748129</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1719760748129</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +144,7 @@
     <MESSAGE value="Adding Form front with the new form" />
     <MESSAGE value="Adding Ingredients from API, add and edit working good, front of the ingredients page" />
     <MESSAGE value="Adding recipe-details front" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding recipe-details front" />
+    <MESSAGE value="Adding Command section, local storage exceed problem, adding error managing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding Command section, local storage exceed problem, adding error managing" />
   </component>
 </project>

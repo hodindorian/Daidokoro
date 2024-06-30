@@ -1,1 +1,51 @@
-<p>command works!</p>
+<style>
+  .command-list {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .recipe-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    padding: 10px 20px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .recipe-item h3 {
+    margin: 0;
+  }
+
+  .recipe-item button {
+    background-color: #ff5252;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .recipe-item button:hover {
+    background-color: #ff0000;
+  }
+</style>
+
+<div class="command-list">
+  <h2>Ma Commande</h2>
+  <div *ngFor="let recipe of recipes" class="recipe-item">
+    <img src="{{recipe.$image}}" width="10%" alt="ImageRecipe"
+         onerror="this.onerror=null;this.src='https://placehold.co/100x100/black/white?text=Not+Found';">
+    <h3>{{ recipe.$name }}</h3>
+    <button (click)="removeRecipe(recipe)">Retirer</button>
+  </div>
+  <p *ngIf="recipes.length === 0">Aucune recette dans la commande.</p>
+</div>

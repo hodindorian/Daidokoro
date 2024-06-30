@@ -71,12 +71,14 @@
     border: 1px solid #bbb;
     border-radius: 5px;
   }
-  .page-link.active {
-    background-color: #333;
-    color: white;
+  .error-message {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 4%;
   }
 </style>
 <body>
+<div *ngIf="errorMessageDisplay" class="error-message">{{ errorMessage }}</div>
 <div [ngClass]="{'four-column': !isFormVisible, 'two-column': isFormVisible}" class="recipe-container">
   <div class="recipe-card" *ngFor="let recipe of paginatedRecipes">
     <img [src]="recipe.$image" alt="Recette 1" class="recipe-image"
@@ -85,6 +87,7 @@
       <h2 class="recipe-title">{{recipe.$name}}</h2>
       <p class="recipe-description">{{recipe.$description}}</p>
       <button (click)="detailsRecipe(recipe.$id)" class="details-button">Détails</button>
+      <button (click)="addToCommand(recipe)" class="details-button" >Ajouter à ma commande</button>
     </div>
   </div>
 </div>
