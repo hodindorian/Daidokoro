@@ -122,7 +122,7 @@
 
         <label for="ingredient-name">Ingredient:</label>
         <select id="ingredient-name" formControlName="ingredient" required>
-          <option *ngFor="let ingredient of ingredientsList" [value]="ingredient.$name">{{ ingredient.$name }}</option>
+          <option *ngFor="let ingredient of ingredientsList" [value]="ingredient.name">{{ ingredient.name }}</option>
         </select>
 
         <button type="button" class="remove-button" (click)="removeIngredient(i)">Remove</button>
@@ -132,7 +132,7 @@
     <button type="button" class="add-ingredient-button" (click)="addIngredient()">Add Ingredient</button>
 
     <p>Complete the form to enable the button.</p>
-    <button type="submit"  class="submit-button"  [disabled]="!recipeForm.valid">Submit</button>
+    <button type="submit"  class="submit-button">Submit</button>
   </form>
   </div>
 </body>

@@ -1,5 +1,6 @@
 
 export interface Ingredient {
-  $id : number,
-  $name : string
+  id : string,
+  name : string,
+  description : string,
 }

@@ -2,7 +2,7 @@
   .ingredients {
     font-family: Arial, sans-serif;
     background-color: #bab6b6;
-    margin: 0px;
+    margin: 0;
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -18,33 +18,101 @@
     width: 200px;
     margin: 20px;
   }
+
   .ingredient-card:hover {
     transform: scale(1.05);
-  }
-  .ingredient-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
   }
 
   .ingredient-content {
     padding: 15px;
   }
+
   .ingredient-title {
     font-size: 1em;
     margin: 0 0 10px;
   }
-</style>
-<body>
-  <div class="ingredients">
 
-    <div class="ingredient-card" *ngFor="let ingredient of ingredients ">
-      <img src="image1.jpg" alt="Recette 1" class="ingredient-image"
-           onerror="this.onerror=null;this.src='https://placehold.co/100x100/black/white?text=Not+Found';">
-      <div class="ingredient-content">
-        <h2 class="ingredient-title">{{ ingredient.$name }}</h2>
+  .ingredient-actions {
+    margin-top: 10px;
+  }
+
+  .ingredient-actions button {
+    margin-right: 5px;
+  }
+
+  .general-form-add {
+    margin-top: 2%;
+    background-color: #bab6b6;
+    float: left;
+    width: 49%;
+  }
+
+  .general-form-edit {
+    margin-top: 2%;
+    background-color: #bab6b6;
+    float: right;
+    width: 49%;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+    margin-right: 2%;
+    margin-left: 2%
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .form-group input, .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .button-form{
+    margin-left: 2%;
+  }
+</style>
+
+<body>
+<div class="ingredients">
+  <div class="ingredient-card" *ngFor="let ingredient of ingredients">
+    <div class="ingredient-content">
+      <h2 class="ingredient-title">{{ ingredient.name }}</h2>
+      <p>{{ ingredient.description }}</p>
+      <div class="ingredient-actions">
+        <button (click)="edit(ingredient)">Modifier</button>
       </div>
     </div>
-
   </div>
+</div>
+
+<div class="general-form-add">
+  <h2>Ajouter un ingrédient</h2>
+  <div class="form-group">
+    <label for="newName">Nom:</label>
+    <input id="newName" [(ngModel)]="newIngredient.name" required>
+  </div>
+  <div class="form-group">
+    <label for="newDescription">Description:</label>
+    <textarea id="newDescription" [(ngModel)]="newIngredient.description" required></textarea>
+  </div>
+  <button class="button-form" (click)="addIngredient()">Ajouter</button>
+</div>
+
+<div *ngIf="editIngredient" class="general-form-edit">
+  <h2>Modifier l'ingrédient</h2>
+  <div class="form-group">
+    <label for="editName">Nom:</label>
+    <input id="editName" [(ngModel)]="editIngredient.name">
+  </div>
+  <div class="form-group">
+    <label for="editDescription">Description:</label>
+    <textarea id="editDescription" [(ngModel)]="editIngredient.description"></textarea>
+  </div>
+  <button class="button-form" (click)="updateIngredient()">Enregistrer</button>
+  <button class="button-form" (click)="cancelEdit()">Annuler</button>
+</div>
 </body>

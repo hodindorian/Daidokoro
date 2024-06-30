@@ -90,7 +90,7 @@
 </div>
 <div class="pagination">
   <button class="page-link" (click)="previousPage()" [disabled]="currentPage === 0">Précédent</button>
-<!--  <span class="page-link" *ngFor="let page of totalPages; let i = index" [class.active]="currentPage === i" (click)="changePage(i)">{{ i + 1 }}</span>-->
+  <p>{{ currentPage +1 }}</p>
   <button class="page-link" (click)="nextPage()" [disabled]="currentPage === totalPages - 1">Suivant</button>
 </div>
 </body>

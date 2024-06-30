@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, NgModule} from '@angular/core';
 import {Router, RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {RecipeFormComponent} from "./component/recipe-form/recipe-form.component";
 import {AccueilComponent} from "./component/accueil/accueil.component";
@@ -13,7 +13,6 @@ import {LinkService} from "./service/link.service";
   standalone: true,
     imports: [RouterOutlet, AccueilComponent, RecipeFormComponent, NgForOf, NgIf, RecipeListComponent, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
 })
 export class AppComponent {
   links : Link[] = this.linkService.getLinks()
@@ -22,12 +21,12 @@ export class AppComponent {
   }
 
   onClickLogin(event: Event): void {
-    event.preventDefault(); // Prevent the default anchor behavior
+    event.preventDefault();
     this.loginService.login();
   }
 
   onClickLogout(event: Event): void {
-    event.preventDefault(); // Prevent the default anchor behavior
+    event.preventDefault();
     this.loginService.logout();
   }
 

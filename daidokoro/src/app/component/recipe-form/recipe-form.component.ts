@@ -83,14 +83,17 @@ export class RecipeFormComponent {
         $ingredients: this.recipeForm.value.ingredients!.map((ingredient: any) => ({
           quantity: ingredient.quantity,
           unit: ingredient.unit,
-          ingredient: this.ingredientsList.find(ing => ing.$name === ingredient.ingredient)
+          ingredient: this.ingredientsList.find(ing => ing.name === ingredient.ingredient)
         })),
         $image: this.recipeForm.value.image
       };
       this.formSubmitted.emit(recipe);
       this.recipeForm.reset()
       this.ingredients.clear()
+      this.imageBase64 = null;
       this.addIngredient()
+    }else{
+      alert("Veuillez remplir tous les champs")
     }
   }
 }

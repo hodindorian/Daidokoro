@@ -26,37 +26,9 @@
       background-color: #ddd;
       color: black;
     }
-    .content {
-      padding: 20px;
-      display: flex;
-      gap: 20px;
-    }
-    .recipe-container, .form-container {
-      background-color: #bab6b6;
-      color: black;
-      padding: 20px;
-      flex: 1;
-    }
-    .recipe-container {
-      display: flex;
-      flex-direction: column;
-    }
     .recipe-container h2 {
       font-size: 3em;
       margin-bottom: 10px;
-    }
-    .form-container {
-      display: none;
-      flex-direction: column;
-    }
-    .show-form .form-container {
-      display: flex;
-    }
-    .show-form .recipe-container, .show-form .form-container {
-      flex: 1;
-    }
-    .button-container {
-      margin-top: 20px;
     }
   </style>
 </head>
@@ -73,6 +45,7 @@
     <a routerLink="{{link.$link}}" routerLinkActive="active" ariaCurrentWhenActive="page">{{link.$name}}</a>
   </div>
 </div>
+
 
 <router-outlet></router-outlet>
 
